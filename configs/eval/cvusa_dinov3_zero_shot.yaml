@@ -1,0 +1,9 @@
+_base_: ../base/eval_base.yaml
+
+dataset:
+  name: cvusa
+  data_root: data/CVUSA
+  eval_split: test
+  reference_size: [224, 224]
+  query_size: [81, 448]
+  ground_cutting: 0

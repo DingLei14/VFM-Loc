@@ -1,0 +1,10 @@
+_base_: ../base/eval_base.yaml
+
+dataset:
+  name: vigor
+  data_root: data/VIGOR
+  same_area: true
+  eval_split: test
+  reference_size: [224, 224]
+  query_size: [224, 448]
+  ground_cutting: 0

@@ -1,0 +1,33 @@
+evaluation:
+  batch_size: 128
+  num_workers: 4
+  verbose: true
+  device: cuda
+  gpu_ids: [0]
+  ranks: [1, 5, 10]
+  step_size: 256
+  normalize_features: true
+  mixed_precision: true
+
+alignment:
+  use_procrustes: true
+  pca_dim: 256
+  rmac_alpha: 6.0
+
+model:
+  type: dinov3
+  name: dinov3_vitb16
+  img_size: 224
+  weights: pretrained_weights/dinov3/dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth
+  pool: gem
+  use_rmac: true
+  rmac_levels: [1, 2]
+
+dataset:
+  name: u1652
+  data_root: /root/autodl-tmp/University/
+  task: D2S
+  eval_split: test
+  reference_size: [224, 224]
+  query_size: [224, 224]
+  ground_cutting: 0
