@@ -57,10 +57,6 @@ Other examples:
 
 ![Regional Similarity Visualization](assets/sim_vis.png)
 
-We visualize spatial similarity distributions of representative UAV-satellite pairs before and after manifold alignment. Patch-level DINOv3 features are kept in their spatial layout, then domain-wise PCA and Orthogonal Procrustes are applied. The resulting rotation is used to align UAV patch features, and cosine similarity between each aligned UAV patch and the global pooled satellite feature is converted into normalized heatmaps.
-
-Before alignment, similarity responses are often diffuse and distracted by background clutter, reflecting the distribution gap between oblique UAV views and nadir satellite views. After alignment, the responses become much more concentrated on geometrically stable structures such as roof outlines and road intersections. This qualitative result supports the role of the statistical manifold alignment module in suppressing view-specific noise and enhancing discriminative cross-view landmarks.
-
 ## Notes
 
 - This release is focused on the **training-free, zero-shot** VFM-Loc pipeline.
