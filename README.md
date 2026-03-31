@@ -62,12 +62,11 @@ pretrained_weights/
     └── dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth
 ```
 
-All dataset roots, checkpoint paths, image sizes, pooling modes, PCA dimension and retrieval settings are controlled by YAML files in `configs/`.  
-For University-1652 on your cloud workstation, the default config is already set to `/root/autodl-tmp/University/`.
+All dataset roots, checkpoint paths, image sizes, pooling modes, PCA dimension and retrieval settings are controlled by YAML files in `configs/`.
 
 ### Data Directory Guide
 
-If your dataset is not stored at `/root/autodl-tmp/University/`, replace it with your own dataset root in the config file.
+Set your own dataset root by editing the config file below.
 
 Default file:
 
