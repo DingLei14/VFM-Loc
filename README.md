@@ -3,7 +3,6 @@
 PyTorch release for the paper **[VFM-Loc: Training-Free Cross-View Geo-Localization via Aligning Discriminative Visual Hierarchies](https://ieeexplore.ieee.org/document/11755561)** (IEEE Transactions on Geoscience and Remote Sensing, 2026).
 
 - Training-free
-- Zero-shot
 - PyTorch implementation for VFM-Loc
 
 ![VFM-Loc Method Overview](assets/flow_chart.png)
@@ -42,14 +41,14 @@ pretrained_weights/
 ## Evaluation
 
 ```bash
-python eval.py --config configs/eval/u1652_dinov3_zero_shot.yaml
+python eval.py --config configs/eval/u1652_dinov3_inference.yaml
 ```
 
 Other examples:
 
-- `configs/eval/cvusa_dinov3_zero_shot.yaml`
-- `configs/eval/cvact_dinov3_zero_shot.yaml`
-- `configs/eval/vigor_same_dinov3_zero_shot.yaml`
+- `configs/eval/cvusa_dinov3_inference.yaml`
+- `configs/eval/cvact_dinov3_inference.yaml`
+- `configs/eval/vigor_same_dinov3_inference.yaml`
 
 ## Visualization
 
@@ -59,7 +58,7 @@ Other examples:
 
 ## Notes
 
-- This release is focused on the **training-free, zero-shot** VFM-Loc pipeline.
+- This release is focused on the **training-free** VFM-Loc pipeline.
 - `eval.py` is the recommended entry point.
 - The release implementation no longer depends on `VFM_CVGL/core/dinov3`.
 - The **LO-UCV** dataset will be released.
@@ -69,7 +68,7 @@ Other examples:
 
 - LO-UCV dataset release
 - Radio backbone support
-- More zero-shot evaluation configs
+- More training-free evaluation configs
 
 ## Citation
 

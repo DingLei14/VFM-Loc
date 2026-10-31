@@ -21,11 +21,11 @@ from vfm_loc.config import load_config
 from vfm_loc.datasets import build_eval_datasets, build_eval_loaders, get_model_transforms
 from vfm_loc.engine import format_metrics
 from vfm_loc.models import build_model
-from vfm_loc.zero_shot import evaluate_zero_shot
+from vfm_loc.training_free import evaluate_training_free
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Evaluate VFM-Loc zero-shot release.")
+    parser = argparse.ArgumentParser(description="Evaluate the training-free VFM-Loc release.")
     parser.add_argument("--config", required=True, help="Path to eval config yaml.")
     args = parser.parse_args()
 
@@ -44,7 +44,15 @@ def main():
     query_ds, reference_ds = build_eval_datasets(config, transforms)
     query_loader, reference_loader = build_eval_loaders(config, query_ds, reference_ds)
 
-    metrics = evaluate_zero_shot(config, model, query_loader, reference_loader)
+    ds_cfg = config.get("dataset", {})
+    eval_split_raw = ds_cfg.get("eval_split", "test")
+    bs = int(config.get("evaluation", {}).get("batch_size", 64))
+    print(
+        f"[eval] eval_split={eval_split_raw!r}  query={len(query_ds)}  reference={len(reference_ds)}  "
+        f"batch_size={bs}  batches≈{(len(query_ds) + bs - 1) // bs}"
+    )
+
+    metrics = evaluate_training_free(config, model, query_loader, reference_loader)
     print(format_metrics(metrics))
 
 

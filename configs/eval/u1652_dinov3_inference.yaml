@@ -1,7 +1,7 @@
 _base_: ../base/eval_base.yaml
 
 evaluation:
-  mode: zero_shot
+  mode: training_free
   batch_size: 64
   ranks: [1, 5, 10]
   step_size: 256
