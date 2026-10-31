@@ -1,6 +1,6 @@
 # VFM-Loc
 
-PyTorch release for the paper **VFM-Loc: Zero-Shot Cross-View Geo-Localization via Aligning Discriminative Visual Hierarchies**.
+PyTorch release for the paper **[VFM-Loc: Training-Free Cross-View Geo-Localization via Aligning Discriminative Visual Hierarchies](https://ieeexplore.ieee.org/document/11755561)** (IEEE Transactions on Geoscience and Remote Sensing, 2026).
 
 - Training-free
 - Zero-shot
@@ -75,9 +75,12 @@ Other examples:
 
 ```bibtex
 @article{lu2026vfmloc,
-  title   = {VFM-Loc: Zero-Shot Cross-View Geo-Localization via Aligning Discriminative Visual Hierarchies},
+  title   = {VFM-Loc: Training-Free Cross-View Geo-Localization via Aligning Discriminative Visual Hierarchies},
   author  = {Jun Lu and Zehao Sang and Haoqi Wei and Xiangyun Liu and Kun Zhu and Haitao Guo and Zhihui Gong and Lei Ding},
-  journal = {arXiv preprint arXiv:2603.13855},
-  year    = {2026}
+  journal = {IEEE Transactions on Geoscience and Remote Sensing},
+  year    = {2026},
+  pages   = {1--1},
+  doi     = {10.1109/TGRS.2026.3748024},
+  url     = {https://ieeexplore.ieee.org/document/11755561}
 }
 ```
